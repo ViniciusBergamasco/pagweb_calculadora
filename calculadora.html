@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div id="div_imagem">
+            <img src="calculadora.jpg" alt="calculadora">
+        </div>
+
+
+        
+        <form>
+            <label>Primero número:</label>
+            <input type="text" id="num1"> <br>
+            <label>Segundo número: </label>
+            <input type="text" id="num2"> <br> <br>
+            <button id="somar" onclick="Somar();">Somar</button>
+            <button id="dividir" onclick="Dividir();">Dividir</button>
+            <button id="multiplicar" onclick="Multiplicar();">Multiplicar</button>
+            <button id="subtrair" onclick="Subtrair();">Subtrair</button>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+
+        var input1,input2 = 0
+
+        function receberDados(){
+            input1 = parseFloat(document.getElementById("num1").value);
+            input2 = parseFloat(document.getElementById("num2").value);
+
+        }
+        
+        function Somar(){
+            receberDados();
+            var soma = input1 + input2;
+            alert("O resultado da soma é: " + soma);
+        }
+
+        function Multiplicar(){
+            receberDados();
+            var multiplicacao = input1 * input2;
+            alert("O resultado da multiplicação é: " + multiplicacao);
+        }
+        function Dividir(){
+            receberDados();
+            var divisao = input1 / input2;
+            alert("O resultado da divisão é: " + divisao);
+        }
+        function Subtrair(){
+            receberDados();
+            var subtracao = input1 - input2;
+            alert("O resultado da subtração é: " + subtracao);
+        }
+    </script>
+</body>
+
+
+</html>
