@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiz quadrada</title>
+    <link rel="stylesheet" href="raiz.css">
+</head>
+<body>
+    <img src="raiz_quadrada.jpg" alt="raiz">
+    <form>
+        <p>
+            <label>Radicando: </label>
+            <input type="text" id="input_rad">
+        </p>
+        <p>
+            <input type="button" value="Calcular" id="btn_calcular" onclick="CalcRaiz();">
+        </p>
+    </form>
+
+    <script type="text/javascript">
+
+        function CalcRaiz(){
+            var rad =parseInt(document.getElementById("input_rad").value); 
+            var calc_raiz = Math.sqrt(rad);
+            alert(calc_raiz);
+        }
+
+    </script>
+</body>
+</html>
