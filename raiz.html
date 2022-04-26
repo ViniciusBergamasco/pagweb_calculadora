@@ -20,13 +20,41 @@
     </form>
 
     <script type="text/javascript">
+        var rad,calc_raiz = 0;
 
         function CalcRaiz(){
-            var rad =parseInt(document.getElementById("input_rad").value); 
-            var calc_raiz = Math.sqrt(rad);
-            alert("O resultado é: " + calc_raiz);
+            if(dadosValidos()){
+                rad = parseInt(document.getElementById("input_rad").value); 
+                calc_raiz = Math.sqrt(rad);
+                alert("O resultado é: " + calc_raiz);
+            }
+            else{
+                alert("O dado não é válido para realizar o cálculo.")
+            }
         }
 
+        function converterDados(){
+            rad = parseInt(document.getElementById("input_rad").value);
+        }
+
+        function recebeDados(){
+            rad = document.getElementById("input_rad").value;
+        }
+
+        function dadosValidos(){
+            recebeDados();
+            if (rad.trim() == ""){
+                return false;
+            }
+
+            else if(isNaN(rad)){
+                return false;
+            }
+
+            else{
+                return true
+            }
+        }
     </script>
 </body>
 </html>

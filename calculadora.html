@@ -20,10 +20,10 @@
             <input type="text" id="num1"> <br>
             <label>Segundo número: </label>
             <input type="text" id="num2"> <br> <br>
-            <button id="somar" onclick="Somar();">Somar</button>
-            <button id="dividir" onclick="Dividir();">Dividir</button>
-            <button id="multiplicar" onclick="Multiplicar();">Multiplicar</button>
-            <button id="subtrair" onclick="Subtrair();">Subtrair</button>
+            <input type="button" value="Somar" id="somar" onclick="Somar();">
+            <input type="button" value="Dividir" id="dividir" onclick="Dividir();">
+            <input type="button" value="Multiplicar" id="multiplicar" onclick="Multiplicar();">
+            <input type="button" value="Subtrair" id="subtrair" onclick="Subtrair();">
         </form>
     </div>
 
@@ -32,32 +32,76 @@
         var input1,input2 = 0
 
         function receberDados(){
-            input1 = parseFloat(document.getElementById("num1").value);
-            input2 = parseFloat(document.getElementById("num2").value);
+            input1 = document.getElementById("num1").value; 
+            input2 = document.getElementById("num2").value;
 
+        }
+        function converterDados(){
+            input1 = parseFloat(document.getElementById("num1").value); 
+            input2 = parseFloat(document.getElementById("num2").value);
         }
         
         function Somar(){
-            receberDados();
-            var soma = input1 + input2;
-            alert("O resultado da soma é: " + soma);
+            if(dadosValidos()){
+                converterDados();
+                var soma = input1 + input2;
+                alert("O resultado da soma é: " + soma);
+            }
+            else{
+                alert("Os dados não são válidos para realizar a operação.")
+            }
+            
         }
 
         function Multiplicar(){
-            receberDados();
-            var multiplicacao = input1 * input2;
-            alert("O resultado da multiplicação é: " + multiplicacao);
+            if(dadosValidos()){
+                converterDados();
+                var multiplicacao = input1 * input2;
+                alert("O resultado da multiplicação é: " + multiplicacao);
+            }
+            else{
+                alert("Os dados não são válidos para realizar a operação.")
+            }
+
         }
         function Dividir(){
-            receberDados();
-            var divisao = input1 / input2;
-            alert("O resultado da divisão é: " + divisao);
+            if(dadosValidos()){
+                converterDados();
+                var divisao = input1 / input2;
+                alert("O resultado da divisão é: " + divisao);
+            }
+            else{
+                alert("Os dados não são válidos para realizar a operação.")
+            }
         }
         function Subtrair(){
-            receberDados();
-            var subtracao = input1 - input2;
-            alert("O resultado da subtração é: " + subtracao);
+            if(dadosValidos()){
+                converterDados();
+                var subtracao = input1 - input2;
+                alert("O resultado da subtração é: " + subtracao);
+            }
+            else{
+                alert("Os dados não são válidos para realizar a operação.")
+            }
+
         }
+
+        function dadosValidos(){
+            receberDados();
+
+            if (input1.trim() == "" || input2.trim() == ""){
+                return false;
+            }
+
+            else if(isNaN(input1) || isNaN(input2)){
+                return false;
+            }
+
+            else{
+                return true
+            }
+        }
+
     </script>
 </body>
 

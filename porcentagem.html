@@ -24,11 +24,44 @@
     </form>
 
     <script type="text/javascript">
+
+        var num,porc = 0;
+
         function CalcPorc(){
-            var num = parseFloat(document.getElementById("input_num").value);
-            var porc = parseInt(document.getElementById("input_porc").value);
-            var calc_porc = num * (porc/100);
-            alert("O resultado é: " + calc_porc);
+            if(dadosValidos()){
+                converterDados();
+                var calc_porc = num * (porc/100);
+                alert("O resultado é: " + calc_porc);
+
+            }
+            else{
+                alert("Os dados não são válidos para realizar a operação.")
+            }
+
+        }
+        function converterDados(){
+            num = parseFloat(document.getElementById("input_num").value);
+            porc = parseInt(document.getElementById("input_porc").value);
+        }
+
+        function recebeDados(){
+            num = document.getElementById("input_num").value;
+            porc = document.getElementById("input_porc").value;
+        }
+
+        function dadosValidos(){
+            recebeDados();
+            if (num.trim() == "" || porc.trim() == ""){
+                return false;
+            }
+
+            else if(isNaN(num) || isNaN(porc)){
+                return false;
+            }
+
+            else{
+                return true
+            }
         }
     </script>
 </body>
