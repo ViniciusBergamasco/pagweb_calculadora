@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn{
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+
+.btn:active{
+    background-color: rgb(41, 37, 37);
+}
